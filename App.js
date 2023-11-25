@@ -20,7 +20,7 @@ function App() {
   }
   return (
     <div>
-      <Tab data={data} selectedTab={0} Render={Render} />
+      <Tab data={data} selectedTab={0} Render={Render} destroyTab={true} />
     </div>
   )
 }
