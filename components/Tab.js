@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import TabBody from "./TabBody";
 import TabCards from "./TabCards";
 
-function Tab({ data, selectedTab, Render }) {
+function Tab({ data, selectedTab, Render,destroyTab }) {
   const [activeTab, setActiveTab] = useState(selectedTab ?? 0);
   const [prevTab, setPrevTabKey] = useState(selectedTab ?? 0);
   const [tabs, setTabs] = useState([...data]);
 
   const clickedTab = (e) => {
-    tabs[prevTab].visited = false;
+      tabs[prevTab].visited = false;
+      if (destroyTab) tabs[prevTab].rendered = false;
     setPrevTabKey(e.key);
     e.visited = true;
     e.rendered = true;
