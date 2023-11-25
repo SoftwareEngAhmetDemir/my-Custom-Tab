@@ -1,0 +1,10 @@
+.tabCards{
+  display: flex;
+  gap: 5px;
+}
+.hide{
+  display: none ;
+}
+.block{
+  display: block ;
+}
